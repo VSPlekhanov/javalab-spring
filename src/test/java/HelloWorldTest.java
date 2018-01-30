@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class HelloWorldTest {
 
-    static final String APPLICATION_CONTEXT_XML_FILE_NAME =
+    private static final String APPLICATION_CONTEXT_XML_FILE_NAME =
             "application-context.xml";
 
     private BeanFactory context = new ClassPathXmlApplicationContext(
