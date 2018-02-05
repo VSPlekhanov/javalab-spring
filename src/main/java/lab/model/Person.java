@@ -5,6 +5,7 @@ import java.util.List;
 import static java.lang.String.format;
 
 public interface Person {
+
     String getFirstName();
     String getLastName();
     Country getCountry();
@@ -12,6 +13,7 @@ public interface Person {
     float getHeight();
     boolean isProgrammer();
     boolean isBroke();
+    UsualPerson setBroke(boolean isBroke);
     List<Contact> getContacts();
 
     default String getName() {

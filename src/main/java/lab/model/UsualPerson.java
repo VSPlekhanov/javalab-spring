@@ -1,10 +1,15 @@
 package lab.model;
 
-import lombok.Value;
+import lombok.*;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-@Value
+@Data
+@Getter
+@Setter
+@AllArgsConstructor
+@Component("person")
 public class UsualPerson implements Person {
     private int id;
     private String firstName;
@@ -15,4 +20,5 @@ public class UsualPerson implements Person {
     private boolean isProgrammer;
     private List contacts;
     private boolean isBroke;
+
 }
