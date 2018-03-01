@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 
 import java.sql.PreparedStatement;
 import java.sql.Statement;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -43,9 +44,11 @@ public class JdbcCountryDao extends NamedParameterJdbcDaoSupport implements Coun
 
     @Override
     public List<Country> getCountriesStartWith(String name) {
+        Map<String, String> map = new HashMap<>();
+        map.put("name", name + "%");
         return getNamedParameterJdbcTemplate()
                 .query(GET_COUNTRIES_BY_NAME_SQL,
-                        Map.of("name", name + "%"),
+                        map,
                         COUNTRY_ROW_MAPPER);
     }
 
